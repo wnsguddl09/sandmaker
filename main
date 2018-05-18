@@ -1,14 +1,7 @@
 #include <stdio.h>
 
 int main(){
-
-printf("test");
-
-  return 0;ㅌㅊㅌㅊㅌㅊ
-  ㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇ
-  
-  
-  }
+}
 int begin(void)
 {
 	char choice;
@@ -25,9 +18,11 @@ answer:
 		clear;
 		printf("\n\n\n\n                  우리가 직접 샌드위치를 만들어서 팔아보자~~!!!\n");//게임 설명
 		Sleep(1000);
-		printf("\n                손님이 주문하는 다양한 토핑의 샌드위치를 쌓는다!!!!\n"); 
+		printf("\n                손님이 주문하는 다양한 토핑의 샌드위치를 쌓는다!!!!('q'~'y'입력)\n");
 		Sleep(1000);
-		printf("\n               샌드위치를 만들었으면 음료수도 높이에 맞게 따라준다~~~\n");
+		printf("\n                    토핑을 다 쌓았으면 샌드위치를 전달하자~~!!!(enter 입력)\n");
+		Sleep(1000);
+		printf("\n               샌드위치를 만들었으면 음료수도 높이에 맞게 따라준다(space bar)~~~\n");
 		Sleep(1000);
 		printf("\n                     만약 샌드위치 모양이 틀렸다면 다시 주문~~\n");
 		Sleep(1000);

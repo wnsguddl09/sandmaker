@@ -21,8 +21,6 @@ void Gotoxy(int x, int y, char* s) { //x값을 2x로 변경, 좌표값에 바로
    printf("%s", s);
 }
 
-int main(){
-}
 int begin(void)
 {
 	char choice;
@@ -52,4 +50,161 @@ answer:
 		getchar(); getchar(); goto first;
 	}
 	else { goto answer; }
+}
+
+int main()
+{
+	begin();
+
+	int randomsand, randomsand1;
+	srand(time);
+	int randomwo;
+	int i = 0, a = 0, b = 0, c = 0;
+	char arr[10];
+	char arr1[10];
+	int num = 0, score = 0;
+	clock_t oldtime;
+a:
+	gotoxy(60, 8);
+	printf("^^^^^^^^^^^^ : - a");
+	gotoxy(60, 10);
+	printf("ㅁㅁㅁㅁㅁㅁ : - b");
+	gotoxy(60, 12);
+	printf("wwwwwwwwwwww : - q");
+	gotoxy(60, 14);
+	printf(",,,,,,,,,,,, : - w");
+	gotoxy(60, 16);
+	printf("xxxxxxxxxxxx : - e");
+	gotoxy(60, 18);
+	printf("************ : - r");
+	gotoxy(60, 20);
+	printf("############ : - t");
+	gotoxy(60, 22);
+	printf("oooooooooooo : - y");
+	gotoxy(30, 24);
+	for (c = 5; c < 24; c++)
+	{
+		gotoxy(25, c);
+		printf("■");
+	}
+	gotoxy(22, 26);
+	printf("점수 : %d", score);
+
+	randomsand = rand() % 7 + 1;
+	randomsand1 = 1;
+	gotoxy(7, 15);
+	printf("ㅁㅁㅁㅁㅁㅁ\n");
+	arr[0] = 'b';
+	for (i = 0; i < randomsand; i++)
+	{
+		randomwo = rand() % 6;
+
+		gotoxy(7, 15 - randomsand1);
+		switch (randomwo)
+		{
+		case 1:
+			printf("wwwwwwwwwww\n");
+			arr[i + 1] = 'q';
+			break;
+		case 2:
+			printf(",,,,,,,,,,,\n");
+			arr[i + 1] = 'w';
+			break;
+		case 3:
+			printf("xxxxxxxxxxx\n");
+			arr[i + 1] = 'e';
+			break;
+		case 4:
+			printf("***********\n");
+			arr[i + 1] = 'r';
+			break;
+		case 5:
+			printf("###########\n");
+			arr[i + 1] = 't';
+			break;
+		default:
+			printf("ooooooooooo\n");
+			arr[i + 1] = 'y';
+			break;
+
+		}
+		randomsand1++;
+	}
+	gotoxy(7, 15 - randomsand1);
+	printf("^^^^^^^^^^^\n");
+	arr[i + 1] = 'a';
+	gotoxy(7, 23);
+	printf("주문받은 버거");
+	gotoxy(31, 23);
+	printf("내가 만든 버거");
+	a = 0;
+	while (1) {
+		oldtime = clock();
+		gotoxy(35, 15 - b);
+		scanf(" %c", &arr1[a]);
+
+
+		if ((arr[a] == arr1[a]))
+		{
+			gotoxy(35, 15 - b);
+			b++;
+			switch (arr[a])
+			{
+			case 'a':
+				printf("^^^^^^^^^^^^\n");
+				getchar(); break;
+			case 'q':
+				printf("wwwwwwwwwwww\n");
+				getchar(); break;
+			case 'w':
+				printf(",,,,,,,,,,,,\n");
+				getchar(); break;
+			case 'e':
+				printf("xxxxxxxxxxxxx\n");
+				getchar(); break;
+			case 'r':
+				printf("*************\n");
+				getchar(); break;
+			case 't':
+				printf("#############\n");
+				getchar(); break;
+			case 'y':
+				printf("ooooooooooo\n");
+				getchar(); break;
+			default:
+				printf("ㅁㅁㅁㅁㅁㅁ\n");
+				getchar(); break;
+
+
+			}
+
+
+			if (arr[a] == 'a'&&arr1[a] == 'a') {
+
+				system("cls");
+				b = 0;
+				score++;
+				goto a;
+
+			}
+			a++;
+			num = num + 2;
+		}
+		else
+		{
+			system("cls");
+			gotoxy(20, 10);
+			printf("땡!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			Sleep(500);
+			system("cls");
+			b = 0;
+
+			goto a;
+		}
+
+
+	}
+
+	system("pause");
+	return 0;
 }

@@ -1,4 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+#include <Windows.h>
+#include <MMSystem.h>
+#pragma comment(lib,"winmm")
+#define MAP_ADJ_X 3
+#define MAP_ADJ_Y 2
+#define MAP_X 30
+#define MAP_Y 20
+void gotoxy(int x, int y) {
+   COORD Pos = { x,y };
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+
+void Gotoxy(int x, int y, char* s) { //x값을 2x로 변경, 좌표값에 바로 문자열을 입력할 수 있도록 printf함수 삽입  
+   COORD pos = { 2 * x,y };
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+   printf("%s", s);
+}
 
 int main(){
 }

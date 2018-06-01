@@ -10,7 +10,7 @@
 #define MAP_ADJ_Y 2
 #define MAP_X 30
 #define MAP_Y 20
-void gotoxy(int x, int y) {
+void gotoxy(int x, int y) {  //함수를 이동시키는 것
    COORD Pos = { x,y };
    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
@@ -100,7 +100,7 @@ a:
 		randomwo = rand() % 6;
 
 		gotoxy(7, 15 - randomsand1);
-		switch (randomwo)
+		switch (randomwo)  //case로 사용자 입력 받아서 arr배열에 저장하기
 		{
 		case 1:
 			printf("wwwwwwwwwww\n");
@@ -139,12 +139,12 @@ a:
 	printf("내가 만든 버거");
 	a = 0;
 	while (1) {
-		oldtime = clock();
+		
 		gotoxy(35, 15 - b);
 		scanf(" %c", &arr1[a]);
 
 
-		if ((arr[a] == arr1[a]))
+		if ((arr[a] == arr1[a]))//사용자의 입력을 arr1에 저장하여 arr과 비교해보기
 		{
 			gotoxy(35, 15 - b);
 			b++;
@@ -179,7 +179,7 @@ a:
 			}
 
 
-			if (arr[a] == 'a'&&arr1[a] == 'a') {
+			if (arr[a] == 'a'&&arr1[a] == 'a') {//오답인 
 
 				system("cls");
 				b = 0;
